@@ -300,7 +300,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text"
     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#d9a876" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
     <span id="btn-map-text">Ver ubicación</span>
   </a>
-  <a class="btn-sm" href="#faq-section" onclick="document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});">
+  <a class="btn-sm" id="btn-faq" href="#faq-section" onclick="document.getElementById('faq-section').scrollIntoView({behavior:'smooth'});">
     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#d9a876" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.7-2 1.8-2 3.5M12 17h.01"/></svg>
     <span id="btn-faq-text">Preguntas frecuentes</span>
   </a>
@@ -308,11 +308,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text"
 
 <a class="info-row" href="#" onclick="return false;">
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm.75 5v5.25l4.5 2.68-.75 1.23L11 13V7h1.75z"/></svg>
-  <span id="info-hours">Lun a jue 5:00 p.m. – 12:00 a.m. · Vie y sáb 5:00 p.m. – 2:00 a.m.</span>
+  <span id="info-hours">Jue, dom y lun 5:00 p.m. – 12:00 a.m. · Vie y sáb 5:00 p.m. – 2:00 a.m.</span>
 </a>
 <a class="info-row" href="https://maps.google.com" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
-  <span id="info-address">Cra. 00 #00-00, Barranquilla, Atlántico</span>
+  <span id="info-address">Plaza Comercial Bahamas, vía principal, frente a la cancha Carlos Bacca. Cra. 10 #4-29, local 1, primer piso, Puerto Colombia, Atlántico.</span>
 </a>
 
 <div class="faq-section" id="faq-section">
@@ -375,8 +375,8 @@ const i18n = {
     searchPlaceholder:"Buscar en el menú...",
     searchNoResults:'No encontramos resultados para "{q}"',
     searchResultsLabel:"{n} RESULTADO{s}",
-    infoHours:"Lun a jue 5:00 p.m. – 12:00 a.m. · Vie y sáb 5:00 p.m. – 2:00 a.m.",
-    infoAddress:"Cra. 00 #00-00, Barranquilla, Atlántico",
+    infoHours:"Jue, dom y lun 5:00 p.m. – 12:00 a.m. · Vie y sáb 5:00 p.m. – 2:00 a.m.",
+    infoAddress:"Plaza Comercial Bahamas, vía principal, frente a la cancha Carlos Bacca. Cra. 10 #4-29, local 1, primer piso, Puerto Colombia, Atlántico.",
     btnWa:"Pedir por WhatsApp",
     btnRes:"Reservar mesa",
     btnMap:"Ver ubicación",
@@ -391,8 +391,8 @@ const i18n = {
     searchPlaceholder:"Search the menu...",
     searchNoResults:'No results found for "{q}"',
     searchResultsLabel:"{n} RESULT{s}",
-    infoHours:"Mon–Thu 5:00 PM – 12:00 AM · Fri–Sat 5:00 PM – 2:00 AM",
-    infoAddress:"Cra. 00 #00-00, Barranquilla, Atlántico",
+    infoHours:"Thu, Sun & Mon 5:00 PM – 12:00 AM · Fri–Sat 5:00 PM – 2:00 AM",
+    infoAddress:"Plaza Comercial Bahamas, main road, across from Cancha Carlos Bacca. Cra. 10 #4-29, unit 1, 1st floor, Puerto Colombia, Atlántico.",
     btnWa:"Order on WhatsApp",
     btnRes:"Reserve a table",
     btnMap:"View location",
@@ -1023,6 +1023,10 @@ body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!
 /* Centrar título y subtítulo del restaurante en el header, dejando espacio libre para la fila de íconos superior (antes ocupado por el logo). */
 .header{text-align:center!important;padding-top:52px!important;}
 .resto-name,.resto-sub{text-align:center!important;width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;}
+
+/* Se retira el recuadro de Preguntas Frecuentes y su botón de acceso. */
+#faq-section,#btn-faq{display:none!important;}
+.extra-btns{grid-template-columns:1fr!important;}
 
 /* Panel del chatbot proporcional al tamaño del menú, sobre todo en celular. */
 .chatbot-panel{width:min(380px,calc(100vw - 28px))!important;height:min(64vh,520px)!important;max-height:min(64vh,520px)!important;right:14px!important;left:auto!important;bottom:86px!important;border-radius:20px!important;}
